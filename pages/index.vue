@@ -3,33 +3,14 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreveiw
-        id="1"
-        previewText="my first preview text"
-        title="Hello there"
-        thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
-      />
-      <PostPreveiw
-        id="2"
-        previewText="my second preview text"
-        title="Hello there again"
-        thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
-      />
-      <PostPreveiw
-        id="3"
-        previewText="my preview text"
-        title="bye"
-        thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
-      />
-    </section>
+    <PostList/>
   </div>
 </template>
 
 <script>
-import PostPreveiw from "../components/Posts/PostPreview.vue";
+import PostList from '~/components/Posts/PostList.vue';
 export default {
-  components: { PostPreveiw },
+  components: { PostList },
 };
 </script>
 
