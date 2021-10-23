@@ -13,6 +13,7 @@ export default {
   name:'Pages',
   components: { PostList },
   asyncData(context, callback){
+    console.log('-----> asyncData execute.')
     setTimeout(()=>{
       callback(null,{
         loadedPosts:[

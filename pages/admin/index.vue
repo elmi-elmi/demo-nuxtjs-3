@@ -1,9 +1,9 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
-      <AppButton @click="$router.push('/admin/new-post')"
-        >Create Post</AppButton
-      >
+      <AppButton @click="$router.push('/admin/new-post')">
+        Create Post
+      </AppButton>
     </section>
     <section class="exiting-posts">
       <h1>Existing Posts</h1>
