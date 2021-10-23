@@ -1,25 +1,13 @@
 <template>
   <section class="post-list">
     <PostPreveiw
-      id="1"
+      v-for="post in posts"
+      :id="post.id"
       :is-admin="isAdmin"
-      previewText="my first preview text"
-      title="Hello there"
-      thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
-    />
-    <PostPreveiw
-      id="2"
-      :is-admin="isAdmin"
-      previewText="my second preview text"
-      title="Hello there again"
-      thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
-    />
-    <PostPreveiw
-      id="3"
-      :is-admin="isAdmin"
-      previewText="my preview text"
-      title="bye"
-      thumbnail="https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"
+      :previewText="post.previewText"
+      :title="post.title"
+      :thumbnail="post.thumbnail"
+      :key="post.id"
     />
   </section>
 </template>
@@ -32,6 +20,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    posts:{
+      type:Array,
+      required:true
+    }
   },
   components: { PostPreveiw },
 };
