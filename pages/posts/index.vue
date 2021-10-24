@@ -7,10 +7,12 @@
 import PostList from '~/components/Posts/PostList';
 export default {
 components:{PostList},
-asyncData(context, callback){
+asyncData(context){
     console.log('-----> asyncData execute.')
-    setTimeout(()=>{
-      callback(null,{
+    return new Promise((resolve, reject)=>{
+      setTimeout(()=>{
+        resolve(
+          {
         loadedPosts:[
         {
           id:'1',
@@ -26,9 +28,16 @@ asyncData(context, callback){
         }
       ]
 
-      });
-
-    },1000)
+      }
+        )
+      },1000);
+    })
+    .then(data =>{
+        return data
+      })
+      .catch(e=>{
+        context.error(new Error())
+      })
   },
 }
 </script>
