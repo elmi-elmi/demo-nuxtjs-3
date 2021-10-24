@@ -7,7 +7,15 @@
 import PostList from '~/components/Posts/PostList';
 export default {
 components:{PostList},
-asyncData(context){
+computed:{
+  loadedPosts(){
+    return this.$store.getters.loadedPosts;
+  }
+},
+fetch(context){
+    // if(context.store.getters.loadedPosts.length > 0){
+    //   return null
+    // }
     console.log('-----> asyncData execute.')
     return new Promise((resolve, reject)=>{
       setTimeout(()=>{
@@ -33,14 +41,14 @@ asyncData(context){
       },1000);
     })
     .then(data =>{
-        return data
+      console.log('----------------');
+      console.log(data.loadedPosts);
+      console.log('----------------');
+        context.store.commit('setPosts', data.loadedPosts)
       })
-      .catch(e=>{
+    .catch(e=>{
         context.error(new Error())
-      })
-  },
-  created(){
-    this.$store.dispatch('setPosts', this.loadedPosts)
+      });
   }
 }
 </script>
