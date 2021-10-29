@@ -4,8 +4,11 @@
       <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
 
       <AppControlInput v-model="editedPost.title">Title</AppControlInput>
+      <AppControlInput v-model="editedPost.previewText"
+        >Preview Text</AppControlInput
+      >
 
-      <AppControlInput v-model="editedPost.thumbnailLink"
+      <AppControlInput v-model="editedPost.thumbnail"
         >Thumbnail Link</AppControlInput
       >
 
@@ -43,7 +46,7 @@ export default {
     return {
       editedPost: this.post
         ? { ...this.post }
-        : { author: "", title: "", thumbnailLink: "", content: "" },
+        : { author: "", title: "", thumbnail: "", content: "" ,previewText:""},
     };
   },
   methods: {
