@@ -30,6 +30,7 @@ asyncData(contex, callback){
           title:'First Post (ID:'+contex.route.params.id+')',
           author:'Shahrokh',
           updateData:new Date(),
+          content:'Some dummy text which is defenitly not the preview text though!',
           previewText:'This is our first post',
           thumbnail:'"https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"'
         }
