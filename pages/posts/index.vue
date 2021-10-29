@@ -12,44 +12,6 @@ computed:{
     return this.$store.getters.loadedPosts;
   }
 },
-fetch(context){
-    // if(context.store.getters.loadedPosts.length > 0){
-    //   return null
-    // }
-    console.log('-----> asyncData execute.')
-    return new Promise((resolve, reject)=>{
-      setTimeout(()=>{
-        resolve(
-          {
-        loadedPosts:[
-        {
-          id:'1',
-          title:'First Post',
-          previewText:'This is our first post',
-          thumbnail:'"https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"'
-        },
-        {
-          id:'2',
-          title:'Second Post',
-          previewText:'This is our second post',
-          thumbnail:'"https://news.cgtn.com/news/2020-11-02/Analysis-China-is-betting-on-science-and-tech-like-never-before-V68V871ula/img/871ca9ce8b9941088260b6ed4ced4eeb/871ca9ce8b9941088260b6ed4ced4eeb.jpeg"'
-        }
-      ]
-
-      }
-        )
-      },1000);
-    })
-    .then(data =>{
-      console.log('----------------');
-      console.log(data.loadedPosts);
-      console.log('----------------');
-        context.store.commit('setPosts', data.loadedPosts)
-      })
-    .catch(e=>{
-        context.error(new Error())
-      });
-  }
 }
 </script>
 
