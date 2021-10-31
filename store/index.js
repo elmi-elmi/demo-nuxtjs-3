@@ -7,7 +7,6 @@ const createStore = () => {
         },
         mutations: {
             setPosts(state, posts) {
-                console.log('========>', posts)
                 state.loadedPosts = posts
             }
         },
@@ -15,7 +14,6 @@ const createStore = () => {
             nuxtServerInit(vuexContext) {
                 return axios.get('https://fir-nuxt-blog-default-rtdb.firebaseio.com/posts.json')
                     .then(res => {
-                        console.log('we are there')
                         const postsArray = [];
                         for (const key in res.data) {
                             postsArray.push({ ...res.data[key], id: key })
@@ -47,7 +45,6 @@ const createStore = () => {
                 // })
             },
             setPosts(vuexContex, posts) {
-                console.log('but threeee0ee0')
                 vuexContex.commit('setposts', posts)
             }
         },

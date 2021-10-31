@@ -7,7 +7,7 @@
       ></div>
       <div class="post-content">
         <h1>{{ title }}</h1>
-        <p>{{ previewText }}</p>
+        <p>{{ previewText }} -- {{ postLink }}</p>
       </div>
     </article>
   </nuxt-link>
@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     postLink() {
-      console.log("---->", this.isAdmin);
+      console.log("---->", "/posts/" + this.id);
       return this.isAdmin ? "/admin/" + this.id : "/posts/" + this.id;
     },
   },
