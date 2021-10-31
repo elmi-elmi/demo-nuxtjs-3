@@ -14,7 +14,8 @@ export default {
   layout: "admin",
   methods:{
     onSubmitted(postData){
-      axios.post('https://fir-nuxt-blog-default-rtdb.firebaseio.com/posts.json', postData)
+      axios.post('https://fir-nuxt-blog-default-rtdb.firebaseio.com/posts.json', {...postData,
+      updateData: new Date()})
       .then(result => console.log('resutl --->',result))
       .catch(error=>console.log(error))
     }
